@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0A0A0A;
+    color: #F5F0E8;
+    font-family: 'Inter', sans-serif;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.cta-button {
+    border: 2px solid #C8A96E;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    margin-top: 20px;
+}
+
+.section-divider {
+    height: 1px;
+    background: #C8A96E;
+    margin: 20px 0;
+}
+
+.dishes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.dish-card {
+    background: #111;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 50px;
+}
