@@ -1,564 +1,63 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruchi - Where Bold Flavours Meet Quiet Luxury</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:ital,wght@0,300;0,400&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: #0A0A0A;
-            color: #F5F0E8;
-            font-family: 'Inter', sans-serif;
-            font-weight: 300;
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 300;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-
-        /* Grain Texture */
-        .grain {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            opacity: 0.08;
-            background-image: 
-                radial-gradient(circle at 20px 20px, transparent 0%, rgba(255,255,255,0.03) 50%, transparent 100%),
-                radial-gradient(circle at 80px 80px, transparent 0%, rgba(255,255,255,0.02) 50%, transparent 100%),
-                radial-gradient(circle at 120px 40px, transparent 0%, rgba(255,255,255,0.01) 50%, transparent 100%);
-            animation: grain-move 20s linear infinite;
-            z-index: 1000;
-        }
-
-        @keyframes grain-move {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(10px, 10px); }
-        }
-
-        /* HERO */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 5vw;
-            position: relative;
-            background: linear-gradient(135deg, #0A0A0A 0%, #1A1208 50%, #0F0F0F 100%);
-        }
-
-        .hero h1 {
-            font-size: clamp(3.5rem, 8vw, 9rem);
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .hero .subtitle {
-            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-            font-weight: 300;
-            margin-bottom: 3rem;
-            opacity: 0;
-            transform: translateY(30px);
-            max-width: 600px;
-        }
-
-        .cta-button {
-            background: transparent;
-            color: #F5F0E8;
-            border: 2px solid #C8A96E;
-            padding: 1rem 3rem;
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 400;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: #C8A96E;
-            transition: left 0.3s ease;
-            z-index: -1;
-        }
-
-        .cta-button:hover::before {
-            left: 0;
-        }
-
-        .cta-button:hover {
-            color: #0A0A0A;
-        }
-
-        /* SECTIONS */
-        section {
-            padding: 120px 5vw;
-            max-width: 1400px;
-            margin: 0 auto;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .section-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #C8A96E, transparent);
-            margin: 3rem auto;
-            width: 100px;
-            opacity: 0.3;
-        }
-
-        /* BRAND STORY */
-        .brand-story {
-            text-align: left;
-        }
-
-        .brand-story h2 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 3rem;
-            color: #F5F0E8;
-        }
-
-        .brand-story p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin-bottom: 2rem;
-            color: #F5F0E8;
-        }
-
-        /* SIGNATURE DISHES */
-        .signature-dishes {
-            text-align: center;
-        }
-
-        .signature-dishes h2 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 4rem;
-        }
-
-        .dishes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .dish-card {
-            background: #111111;
-            border-top: 3px solid #C8A96E;
-            padding: 3rem 2.5rem;
-            transition: all 0.4s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .dish-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: #C8A96E;
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .dish-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 60px rgba(200, 169, 110, 0.15);
-        }
-
-        .dish-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .dish-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            font-weight: 400;
-            margin-bottom: 1rem;
-            color: #F5F0E8;
-        }
-
-        .dish-desc {
-            font-size: 1.1rem;
-            color: #888880;
-            font-weight: 300;
-        }
-
-        /* SOCIAL PROOF */
-        .social-proof {
-            text-align: center;
-            padding: 150px 5vw;
-        }
-
-        .rating {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(10rem, 20vw, 18rem);
-            color: #C8A96E;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            letter-spacing: -0.05em;
-        }
-
-        .social-text {
-            font-size: 1.3rem;
-            color: #888880;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .pull-quote {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 1.6rem;
-            color: #F5F0E8;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 0;
-        }
-
-        /* ATMOSPHERE */
-        .atmosphere {
-            text-align: center;
-        }
-
-        .atmosphere h2 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 4rem;
-        }
-
-        .atmosphere-content {
-            background: #111111;
-            padding: 4rem;
-            border-radius: 8px;
-            max-width: 900px;
-            margin: 0 auto;
-            column-count: 2;
-            column-gap: 3rem;
-            text-align: left;
-            font-size: 1.2rem;
-        }
-
-        .atmosphere-content p {
-            margin-bottom: 1.5rem;
-            break-inside: avoid;
-        }
-
-        @media (max-width: 768px) {
-            .atmosphere-content {
-                column-count: 1;
-            }
-        }
-
-        /* RESERVATION */
-        .reservation {
-            text-align: center;
-            background: #080808;
-        }
-
-        .reservation h2 {
-            font-size: clamp(3rem, 7vw, 5rem);
-            margin-bottom: 1.5rem;
-        }
-
-        .reservation .subtitle {
-            font-size: 1.3rem;
-            color: #888880;
-            margin-bottom: 4rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .reservation-form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group input {
-            background: #111111;
-            border: 1px solid #222222;
-            color: #F5F0E8;
-            padding: 1.2rem;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: #C8A96E;
-            box-shadow: 0 0 0 3px rgba(200, 169, 110, 0.1);
-        }
-
-        .form-group label {
-            color: #888880;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            font-weight: 400;
-        }
-
-        .reservation .cta-button {
-            padding: 1.3rem 4rem;
-            font-size: 1.2rem;
-            grid-column: 1 / -1;
-        }
-
-        @media (max-width: 768px) {
-            .reservation-form {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-
-        /* FOOTER */
-        .footer {
-            padding: 4rem 5vw 2rem;
-            text-align: center;
-            border-top: 1px solid rgba(200, 169, 110, 0.1);
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .footer h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: #F5F0E8;
-        }
-
-        .footer-info {
-            color: #888880;
-            font-size: 1rem;
-            line-height: 1.8;
-        }
-
-        .footer-info a {
-            color: #C8A96E;
-            text-decoration: none;
-        }
-
-        .copyright {
-            margin-top: 2rem;
-            color: #555550;
-            font-size: 0.9rem;
-        }
-
-        /* MOBILE */
-        @media (max-width: 768px) {
-            section {
-                padding: 80px 5vw;
-            }
-
-            .dishes-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .dish-card {
-                padding: 2.5rem 2rem;
-            }
-
-            .social-proof {
-                padding: 100px 5vw;
-            }
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <div class="grain"></div>
 
-    <!-- HERO -->
-    <section class="hero" id="hero">
-        <h1>Where Bold Flavours<br>Meet Quiet Luxury.</h1>
-        <p class="subtitle">An evening at Ruchi doesn't end at the table.</p>
-        <a href="#reservation" class="cta-button">Reserve Your Evening</a>
-    </section>
+<div class="grain"></div>
 
-    <!-- BRAND STORY -->
-    <section class="brand-story">
-        <h2>A Kitchen with Conviction.</h2>
-        <div class="section-divider"></div>
-        <p>We don't chase trends. We chase perfection. Every spice is measured by hand, every flame controlled with precision. This is cooking with conviction—where bold flavours emerge from patience, not haste.</p>
-        <p>The lamb raan doesn't rush. It transforms overnight in a bath of saffron and yogurt, emerging tender enough to cut with a whisper. Our black dal simmers for twelve hours over woods we select ourselves. This is slow cooking as philosophy.</p>
-        <p>Ruchi exists for those who understand that the best memories are made through food. Not just eaten, but felt. Not just shared, but remembered. Join us.</p>
-    </section>
+<section class="hero">
+    <h1>Where Bold Flavours<br>Meet Quiet Luxury.</h1>
+    <p class="subtitle">An evening at Ruchi doesn't end at the table.</p>
+    <a href="#reservation" class="cta-button">Reserve Your Evening</a>
+</section>
 
-    <!-- SIGNATURE DISHES -->
-    <section class="signature-dishes">
-        <h2>The Menu Speaks.</h2>
-        <div class="dishes-grid">
-            <div class="dish-card">
-                <div class="dish-name">Saffron Lamb Raan</div>
-                <div class="dish-desc">Slow-roasted overnight. Finished with rose petal reduction.</div>
-            </div>
-            <div class="dish-card">
-                <div class="dish-name">Smoked Black Dal</div>
-                <div class="dish-desc">Twelve hours. Three woods. One obsession.</div>
-            </div>
-            <div class="dish-card">
-                <div class="dish-name">Cardamom Panna Cotta</div>
-                <div class="dish-desc">The last thing you'll think about before you sleep.</div>
-            </div>
+<section class="brand-story">
+    <h2>A Kitchen with Conviction.</h2>
+    <div class="section-divider"></div>
+    <p>We don't chase trends. We chase perfection.</p>
+</section>
+
+<section class="signature-dishes">
+    <h2>The Menu Speaks.</h2>
+    <div class="dishes-grid">
+        <div class="dish-card">
+            <div class="dish-name">Saffron Lamb Raan</div>
+            <div class="dish-desc">Slow-roasted overnight.</div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- SOCIAL PROOF -->
-    <section class="social-proof">
-        <div class="rating">4★</div>
-        <p class="social-text">Consistently rated by guests across the city.</p>
-        <div class="pull-quote">"The kind of place you don't tell everyone about." — A Ruchi Guest</div>
-    </section>
+<section class="reservation" id="reservation">
+    <h2>The Table Is Yours.</h2>
 
-    <!-- ATMOSPHERE -->
-    <section class="atmosphere">
-        <h2>The Space.</h2>
-        <div class="atmosphere-content">
-            <p>Dim lighting catches the gold in your glass. Warm candlelight dances across tables spaced for intimacy. The air carries whispers of spice—cardamom, clove, slow-burning woods.</p>
-            <p>Intimate seating encourages quiet conversation. No loud music, no crowded bar. Just the essential sounds: the sizzle from the kitchen, the clink of silverware, the shared silence between courses.</p>
-            <p>This is where evenings extend beyond the meal. Where memories settle into the senses long after the last bite.</p>
-        </div>
-    </section>
+    <form class="reservation-form">
+        <input type="text" placeholder="Name" required>
+        <input type="date" required>
+        <input type="email" placeholder="Email" required>
 
-    <!-- RESERVATION -->
-    <section class="reservation" id="reservation">
-        <h2>The Table Is Yours.</h2>
-        <p class="subtitle">Reserve an evening. Leave with a memory.</p>
-        <form class="reservation-form">
-            <div class="form-group">
-                <label>Name</label>
-                <input type="text" required>
-            </div>
-            <div class="form-group">
-                <label>Date</label>
-                <input type="date" required>
-            </div>
-            <div class="form-group">
-                <label>Party Size</label>
-                <input type="number" min="1" max="8" required>
-            </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" required>
-            </div>
-            <button type="submit" class="cta-button">Request Reservation</button>
-        </form>
-    </section>
+        <button type="submit" class="cta-button">Request Reservation</button>
+    </form>
+</section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <h3>Ruchi</h3>
-        <div class="footer-info">
-            12 Heritage Lane, Old City<br>
-            +977 01 234 5678<br>
-            <a href="https://instagram.com/ruchi.dining">@ruchi.dining</a>
-        </div>
-        <div class="copyright">&copy; 2024 Ruchi. All rights reserved.</div>
-    </footer>
+<footer class="footer">
+    <h3>Ruchi</h3>
+</footer>
 
-    <script>
-        // Hero text animation
-        const heroHeadline = document.querySelector('.hero h1');
-        const heroSubtitle = document.querySelector('.hero .subtitle');
-        
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+<!-- JS -->
+<script src="js/script.js"></script>
 
-        // Hero animation on load
-        setTimeout(() => {
-            heroHeadline.style.opacity = '1';
-            heroHeadline.style.transform = 'translateY(0)';
-        }, 500);
-
-        setTimeout(() => {
-            heroSubtitle.style.opacity = '1';
-            heroSubtitle.style.transform = 'translateY(0)';
-        }, 1000);
-
-        // Intersection Observer for scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections except hero
-        document.querySelectorAll('section:not(.hero)').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Smooth scroll for CTA buttons
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Form submission (prevent default for demo)
-        document.querySelector('.reservation-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Reservation requested. We will contact you within 24 hours.');
-        });
-    </script>
-</body
+</body>
+</html>
