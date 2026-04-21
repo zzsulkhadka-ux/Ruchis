@@ -3,61 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruchi - Where Bold Flavours Meet Quiet Luxury</title>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:ital,wght@0,300;0,400&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <title>Ruchi - Experience 3D Dining</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font for a modern feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+    <div id="background-3d"></div>
+    
+    <header>
+        <nav>
+            <div class="logo">Ruchi</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#dinner">Dinner</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="grain"></div>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="floating-text">RU<span class="purple">CHI</span></h1>
+                <p class="tagline">Anti-Gravity Flavors, 3D Experience</p>
+                <button class="cta-button">Order Now</button>
+            </div>
+        </section>
 
-<section class="hero">
-    <h1>Where Bold Flavours<br>Meet Quiet Luxury.</h1>
-    <p class="subtitle">An evening at Ruchi doesn't end at the table.</p>
-    <a href="#reservation" class="cta-button">Reserve Your Evening</a>
-</section>
+        <section id="menu" class="menu-section">
+            <h2 class="section-title">Signature Dishes</h2>
+            <div class="menu-grid">
+                <div class="menu-item card-3d">
+                    <div class="food-emoji">🍲</div>
+                    <h3>Royal Biryani</h3>
+                    <p>A zero-gravity blend of spices and premium basmati.</p>
+                </div>
+                <div class="menu-item card-3d">
+                    <div class="food-emoji">🍗</div>
+                    <h3>Floating Kebab</h3>
+                    <p>Succulent pieces of meat marinated in purple haze.</p>
+                </div>
+                <div class="menu-item card-3d">
+                    <div class="food-emoji">🍹</div>
+                    <h3>Cosmic Cooler</h3>
+                    <p>A refreshing drink from the stars.</p>
+                </div>
+            </div>
+        </section>
 
-<section class="brand-story">
-    <h2>A Kitchen with Conviction.</h2>
-    <div class="section-divider"></div>
-    <p>We don't chase trends. We chase perfection.</p>
-</section>
+        <section id="dinner" class="dinner-section">
+            <h2 class="section-title dinner-title">Dinner Collections</h2>
+            <p class="dinner-subtitle">Scroll to reveal our premium dinner options in stunning 3D</p>
+            
+            <div class="dinner-grid">
+                <div class="dinner-card scroll-reveal">
+                    <div class="dinner-card-inner">
+                        <div class="dinner-front">
+                            <div class="dinner-emoji">🍛</div>
+                            <h3>Hyderabadi Feast</h3>
+                        </div>
+                        <div class="dinner-back">
+                            <p>Experience the royal taste of Hyderabad with our signature biryani, tender meat, and aromatic spices.</p>
+                            <span class="price">₹599</span>
+                        </div>
+                    </div>
+                </div>
 
-<section class="signature-dishes">
-    <h2>The Menu Speaks.</h2>
-    <div class="dishes-grid">
-        <div class="dish-card">
-            <div class="dish-name">Saffron Lamb Raan</div>
-            <div class="dish-desc">Slow-roasted overnight.</div>
-        </div>
-    </div>
-</section>
+                <div class="dinner-card scroll-reveal">
+                    <div class="dinner-card-inner">
+                        <div class="dinner-front">
+                            <div class="dinner-emoji">🍖</div>
+                            <h3>Tandoori Delight</h3>
+                        </div>
+                        <div class="dinner-back">
+                            <p>Succulent tandoori chicken marinated in yogurt and spices, cooked to perfection in our clay oven.</p>
+                            <span class="price">₹499</span>
+                        </div>
+                    </div>
+                </div>
 
-<section class="reservation" id="reservation">
-    <h2>The Table Is Yours.</h2>
+                <div class="dinner-card scroll-reveal">
+                    <div class="dinner-card-inner">
+                        <div class="dinner-front">
+                            <div class="dinner-emoji">🦐</div>
+                            <h3>Coastal Curry</h3>
+                        </div>
+                        <div class="dinner-back">
+                            <p>Fresh seafood cooked in a rich coconut and spiced curry sauce, a taste of the coast.</p>
+                            <span class="price">₹699</span>
+                        </div>
+                    </div>
+                </div>
 
-    <form class="reservation-form">
-        <input type="text" placeholder="Name" required>
-        <input type="date" required>
-        <input type="email" placeholder="Email" required>
+                <div class="dinner-card scroll-reveal">
+                    <div class="dinner-card-inner">
+                        <div class="dinner-front">
+                            <div class="dinner-emoji">🥘</div>
+                            <h3>Paneer Paradise</h3>
+                        </div>
+                        <div class="dinner-back">
+                            <p>Soft paneer cheese in a creamy tomato sauce with aromatic spices and fresh herbs.</p>
+                            <span class="price">₹399</span>
+                        </div>
+                    </div>
+                </div>
 
-        <button type="submit" class="cta-button">Request Reservation</button>
-    </form>
-</section>
+                <div class="dinner-card scroll-reveal">
+                    <div class="dinner-card-inner">
+                        <div class="dinner-front">
+                            <div class="dinner-emoji">🍗</div>
+                            <h3>Butter Chicken</h3>
+                        </div>
+                        <div class="dinner-back">
+                            <p>Tender chicken in a rich, creamy butter sauce with tomatoes and aromatic spices.</p>
+                            <span class="price">₹449</span>
+                        </div>
+                    </div>
+                </div>
 
-<footer class="footer">
-    <h3>Ruchi</h3>
-</footer>
+                <div class="dinner-card scroll-reveal">
+                    <div class="dinner-card-inner">
+                        <div class="dinner-front">
+                            <div class="dinner-emoji">🍚</div>
+                            <h3>Lucknowi Dum</h3>
+                        </div>
+                        <div class="dinner-back">
+                            <p>Slow-cooked biryani with fragrant rice, meat, and a blend of exotic spices sealed to perfection.</p>
+                            <span class="price">₹549</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- JS -->
-<script src="js/script.js"></script>
+        <section id="about" class="about-section">
+            <h2 class="section-title">About Ruchi</h2>
+            <p>Ruchi brings you a revolutionary dining experience where food meets art and gravity takes a backseat. Our 3D-animated restaurant showcases the finest culinary creations in an immersive environment.</p>
+        </section>
+    </main>
 
+    <footer>
+        <p>&copy; 2026 Ruchi Restaurant. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-</html>
+                            </html>
